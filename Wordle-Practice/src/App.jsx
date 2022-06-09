@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Home } from "./Components/Home";
+import { Wordle } from "./Components/Wordle";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Wordle />
     </div>
   );
 }
