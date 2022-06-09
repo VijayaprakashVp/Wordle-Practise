@@ -4,7 +4,7 @@ import "../App.css";
 export const Wordle = () => {
   const [spell, setSpell] = useState({});
   let word = "metal";
-  var color;
+  const [color, setColor] = useState("");
 
   var green = "green";
   var yellow = "yellow";
@@ -19,22 +19,24 @@ export const Wordle = () => {
     str += spell._1 + spell._2 + spell._3 + spell._4 + spell._5;
 
     for (let i = 0; i < word.length; i++) {
-      color = "empty";
       if (str[i] == word[i]) {
-        // color: green;
+        setColor(green);
         console.log("Correct");
+        console.log("color:", color);
       } else {
         let flag = 0;
         for (let j = 0; j < word.length; j++) {
           if (str[i] == word[j]) {
-            // color = "yellow";
+            setColor(yellow);
             console.log("Correct but in wrong place");
+            console.log("color:", color);
             flag = 1;
           }
         }
         if (flag == 0) {
-          // color = grey;
+          setColor(grey);
           console.log("Wrong Input");
+          console.log("color:", color);
         }
       }
     }
@@ -50,7 +52,8 @@ export const Wordle = () => {
           name="_1"
           value={spell._1}
           onChange={(e) => handleChange(e)}
-          style={{ backgroundColor: `${color}` }}
+          className={`color_${color}`}
+          // style={{ backgroundColor: `${color}` }}
         />
         <input
           type="text"
@@ -59,7 +62,8 @@ export const Wordle = () => {
           name="_2"
           value={spell._2}
           onChange={(e) => handleChange(e)}
-          style={{ backgroundColor: `${color}` }}
+          className={`color_${color}`}
+          // style={{ backgroundColor: `${color}` }}
         />
         <input
           type="text"
@@ -68,7 +72,8 @@ export const Wordle = () => {
           name="_3"
           value={spell._3}
           onChange={(e) => handleChange(e)}
-          style={{ backgroundColor: `${color}` }}
+          className={`color_${color}`}
+          // style={{ backgroundColor: `${color}` }}
         />
         <input
           type="text"
@@ -77,7 +82,8 @@ export const Wordle = () => {
           name="_4"
           value={spell._4}
           onChange={(e) => handleChange(e)}
-          style={{ backgroundColor: `${color}` }}
+          className={`color_${color}`}
+          // style={{ backgroundColor: `${color}` }}
         />
         <input
           type="text"
@@ -86,7 +92,8 @@ export const Wordle = () => {
           name="_5"
           value={spell._5}
           onChange={(e) => handleChange(e)}
-          style={{ backgroundColor: `${color}` }}
+          className={`color_${color}`}
+          // style={{ backgroundColor: `${color}` }}
         />
         <br />
       </div>

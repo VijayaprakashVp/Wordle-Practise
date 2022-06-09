@@ -5,12 +5,12 @@ div input {
   width: 20px;
 }
 
-.green {
+.color_green {
   background-color: green;
 }
-.yellow {
+.color_yellow {
   background-color: yellow;
 }
-.grey {
+.color_grey {
   background-color: grey;
 }
